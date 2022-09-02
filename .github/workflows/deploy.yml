@@ -32,5 +32,5 @@ jobs:
         run: |
           git config --global user.name ${{secrets.USER_NAME}}
           git config --global user.email ${{secrets.USER_EMAIL}}
-          git remote set-url origin https://${{ secrets.USER_TOKEN }}@github.com/${{secrets.USER_NAME}}/DevBootCamp.git
+          git remote set-url origin https://${{ secrets.USER_TOKEN }}@github.com/${{secrets.USER_NAME}}/browser-startup-page.git
           npm run deploy
