@@ -152,7 +152,7 @@ const Bookmark = (props) => {
             <Center>
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
 
-<div>
+            <div>
 
                 <div className="relative">
             <Wrapper style={{backgroundColor: `${({ theme }) => theme.colors.body}`, 
@@ -192,17 +192,28 @@ const Bookmark = (props) => {
                         <BookmarkCard bookmark={data[theme]} editBookmarkPopup={editBookmarkSetData}  id={data[theme].id} key={data[theme].id} />
                         ))
                     }
+
+
                     <Center>
-                    <a onClick={() => props.addBookmark()}>
-                        <Wrapper style={{
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+
+                <div>
+                <div className="relative">
+                    <Wrapper style={{
                             background: "linear-gradient(158deg, rgb(2, 106, 122) 0.00%, rgb(242, 78, 163) 100.00%)",
                             color: "rgb(235, 219, 245)", 
                             fontFamily: `${({ theme }) => theme.font}`}}>
-                                <Header><AiFillPlusCircle size="64x"/></Header>             
-                        </Wrapper>
-                                <Header>Add</Header>
-                    </a>
-                    </Center>
+                                
+                    <button className=" p-0 outline-none text-inherit bg-inherit" onClick={() => props.addBookmark()}>
+                    <Header>
+                        <AiFillPlusCircle size="64px"/>
+                    </Header>             
+                    </button>
+                    </Wrapper>
+                        </div>
+                        </div>
+                </Center>
+
                 </Container>
             </Center>
         </div>
