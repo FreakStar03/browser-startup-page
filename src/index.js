@@ -1,17 +1,32 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import * as themes from './theme/scheme.json';
+import * as bookmarks from './data/bookmark.json';
+import { setToLS ,getFromLS  } from './utils/storage';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const Index = () => {
+  if(getFromLS('all-themes')){
+  }else{
+  setToLS('all-themes', themes.default);
+  }
+
+  
+  if(getFromLS('all-bookmarks')){
+  }else{
+    setToLS('all-bookmarks', bookmarks.default);
+  }
+
+  return(
+    <App />
+  )
+}
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <Index />
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
